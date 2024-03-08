@@ -1,6 +1,6 @@
 # Phase 4 Code Challenge: Pizza Restaurants (Updated)
 
-For this assessment, you'll be working with a Pizza Restaurant domain.
+In this code challenge, you'll be working with a Pizza Restaurant domain.
 
 In this repo:
 
@@ -59,7 +59,11 @@ behavior of your API in a realistic setting.
 Your job is to build out the Flask API to add the functionality described in the
 deliverables below.
 
-## Models
+## Core Deliverables
+
+All of the deliverables are graded for the code challenge.
+
+### Models
 
 You will implement an API for the following data model:
 
@@ -98,13 +102,13 @@ python server/seed.py
 > If you aren't able to get the provided seed file working, you are welcome to
 > generate your own seed data to test the application.
 
-## Validations
+### Validations
 
 Add validations to the `RestaurantPizza` model:
 
 - must have a `price` between 1 and 30
 
-## Routes
+### Routes
 
 Set up the following routes. Make sure to return JSON data in the format
 specified along with the appropriate HTTP verb.
@@ -116,7 +120,7 @@ single field).
 NOTE: If you choose to implement a Flask-RESTful app, you need to add code to
 instantiate the `Api` class in server/app.py.
 
-### GET /restaurants
+#### GET /restaurants
 
 Return JSON data in the format below:
 
@@ -144,7 +148,7 @@ Recall you can specify fields to include or exclude when serializing a model
 instance to a dictionary using `to_dict()` (don't forget the comma if specifying
 a single field).
 
-### GET /restaurants/<int:id>
+#### GET /restaurants/<int:id>
 
 If the `Restaurant` exists, return JSON data in the format below:
 
@@ -178,7 +182,7 @@ the appropriate HTTP status code:
 }
 ```
 
-### DELETE /restaurants/<int:id>
+#### DELETE /restaurants/<int:id>
 
 If the `Restaurant` exists, it should be removed from the database, along with
 any `RestaurantPizza`s that are associated with it (a `RestaurantPizza` belongs
@@ -198,7 +202,7 @@ the appropriate HTTP status code:
 }
 ```
 
-### GET /pizzas
+#### GET /pizzas
 
 Return JSON data in the format below:
 
@@ -222,7 +226,7 @@ Return JSON data in the format below:
 ]
 ```
 
-### POST /restaurant_pizzas
+#### POST /restaurant_pizzas
 
 This route should create a new `RestaurantPizza` that is associated with an
 existing `Pizza` and `Restaurant`. It should accept an object with the following
